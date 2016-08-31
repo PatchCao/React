@@ -1,0 +1,28 @@
+{
+  "name": "react",
+  "version": "1.0.0",
+  "description": "react learing demo",
+  "main": "server.js",
+  "dependencies": {
+    "body-parser": "^1.4.3",
+    "express": "^4.4.5"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PatchCao/react.git"
+  },
+  "keywords": [
+    "react",
+    "demo"
+  ],
+  "author": "Patch Cao",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/PatchCao/react/issues"
+  },
+  "homepage": "https://github.com/PatchCao/react#readme"
+}
