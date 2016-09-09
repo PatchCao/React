@@ -9,6 +9,68 @@
     </head>
     <body>
         <div id="example"></div>
-        <script type="text/babel" src="scripts/hello.js"></script>
+        <div id="demo"></div>
+        <script type="text/babel">
+            var MyComponent = React.createClass({
+                /**
+                propTypes: {
+                    children: React.PropTypes.element.isRequired
+                },
+                */
+                getDefaultProps: function() {
+                    return (
+                        value: 'defalut value'
+                    );
+                },
+                render: function() {
+                    return (
+                        <div>
+                            {this.props.value}
+                        </div>
+                    );
+                }
+            });
+
+            ReactDOM.render(
+                <MyComponent />,
+                document.getElementById('demo')
+            );
+        </script>
+        <!--<script type="text/babel" src="scripts/hello.js"></script>-->
+        <script type="text/babel">
+            var Avator = React.createClass({
+                render: function() {
+                    return (
+                        <div>
+                            <PagePic pagename={this.props.pagename} />
+                            <PageLink pagename={this.props.pagename} />
+                        </div>
+                    );
+                }
+            });
+
+            var PagePic = React.createClass({
+                render: function() {
+                    return (
+                        <img src={'https://graph.facebook.com/' + this.props.pagename + '/picture'} />
+                    );
+                }
+            });
+
+            var PageLink = React.createClass({
+                render: function() {
+                    return (
+                        <a href={'https://graph.facebook.com/' + this.props.pagename}>
+                            {this.props.pagename}
+                        </a>
+                    );
+                }
+            })
+
+            ReactDOM.render(
+                <Avator pagename="Engineering" />,
+                document.getElementById('example')
+            );
+        </script>
     </body>
 </html>
