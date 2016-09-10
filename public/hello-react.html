@@ -11,30 +11,20 @@
         <div id="example"></div>
         <div id="demo"></div>
         <script type="text/babel">
-            var MyComponent = React.createClass({
-                /**
-                propTypes: {
-                    children: React.PropTypes.element.isRequired
-                },
-                */
-                getDefaultProps: function() {
-                    return (
-                        value: 'defalut value'
-                    );
-                },
-                render: function() {
-                    return (
-                        <div>
-                            {this.props.value}
-                        </div>
-                    );
-                }
-            });
-
+            function FancyCheckBox(props) {
+              var fancyClass = props.checked ? 'FancyChecked' : 'FancyUnchecked';
+              return (
+                <div className={fancyClass} onClick={props.onClick}>
+                  {props.children}
+                </div>
+              );
+            }
             ReactDOM.render(
-                <MyComponent />,
-                document.getElementById('demo')
-            );
+              <FancyCheckBox checked={true} onClick={console.log.bind(console)}>
+                Hello World!
+              </FancyCheckBox>,
+              document.getElementById('demo')
+            )
         </script>
         <!--<script type="text/babel" src="scripts/hello.js"></script>-->
         <script type="text/babel">
